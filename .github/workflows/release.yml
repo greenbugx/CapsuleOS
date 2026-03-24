@@ -29,11 +29,11 @@ jobs:
       - name: Prepare zip
         run: |
           mkdir dist
-          copy target\release\capsule_os.exe dist\capsule-os.exe
-          powershell Compress-Archive -Path dist\* -DestinationPath CapsuleOS.zip
+          Copy-Item target\release\capsule_os.exe dist\capsule-os.exe
+          Compress-Archive -Path dist\* -DestinationPath CapsuleOS.zip
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: CapsuleOS-windows
-          path: dist/capsule-os.exe
+          path: CapsuleOS.zip
