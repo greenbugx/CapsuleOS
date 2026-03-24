@@ -1,0 +1,12 @@
+﻿[theme]
+name = "default-dark"
+background = "#0d0d0d"
+foreground = "#e0e0e0"
+accent = "#89b4fa"
+secondary = "#cba6f7"
+success = "#a6e3a1"
+warning = "#fab387"
+error = "#f38ba8"
+muted = "#6c7086"
+border = "#313244"
+selection = "#45475a"

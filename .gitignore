@@ -1,0 +1,17 @@
+# Rust
+/target/
+Cargo.lock
+
+# User runtime data
+runtime/
+
+# Local testing
+test/
+
+# Logs & temp
+*.log
+*.tmp
+
+# OS junk
+.DS_Store
+Thumbs.db

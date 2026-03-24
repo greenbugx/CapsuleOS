@@ -1,0 +1,13 @@
+﻿[theme]
+name = "gruvbox"
+background = "#282828"
+foreground = "#ebdbb2"
+accent = "#7dc4a9"
+secondary = "#d3869b"
+success = "#b8bb26"
+warning = "#fabd2f"
+error = "#fb4934"
+muted = "#928374"
+border = "#504945"
+selection = "#3c3836"
+    

@@ -1,0 +1,58 @@
+[system]
+name = "Capsule OS"
+version = "0.1.0"
+username = "dev"
+hostname = "capsule"
+language = "en"
+
+[theme]
+name = "gruvbox"
+background = "#282828"
+foreground = "#ebdbb2"
+accent = "#fabd2f"
+secondary = "#d3869b"
+success = "#b8bb26"
+warning = "#fe8019"
+error = "#fb4934"
+muted = "#a89984"
+border = "#665c54"
+selection = "#504945"
+
+[theme.cursor]
+shape = "block"
+blink = true
+color = "#89b4fa"
+
+[theme.syntax]
+keyword = "#cba6f7"
+string = "#a6e3a1"
+number = "#fab387"
+comment = "#6c7086"
+
+[shell]
+prompt_style = "powerline"
+show_git = false
+show_time = true
+history_size = 1000
+
+[shell.aliases]
+ll = "ls -la"
+h = "help"
+
+[boot]
+show_animation = true
+animation_type = "text"
+animation_speed_ms = 40
+show_post = true
+post_delay_ms = 60
+
+[font]
+family = "monospace"
+size = 26
+bold_ui = true
+
+[behavior]
+autosave_config = true
+confirm_shutdown = true
+welcome_message = true
+

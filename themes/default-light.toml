@@ -1,0 +1,14 @@
+﻿# Light-theme might not work as expected
+
+[theme]
+name = "default-light"
+background = "#f8f5f0"
+foreground = "#e8e4dc"
+accent = "#4d9eff"
+secondary = "#b07fff"
+success = "#5dcc6a"
+warning = "#ffb347"
+error = "#ff5f70"
+muted = "#9a97a8"
+border = "#7a7890"
+selection = "#c0bdd4"
