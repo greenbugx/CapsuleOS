@@ -14,7 +14,7 @@ static BUILTIN_THEMES: Dir = include_dir!("$CARGO_MANIFEST_DIR/themes");
 
 static CONFIG_STORE: OnceCell<Arc<RwLock<Config>>> = OnceCell::new();
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize, Default)]
 #[serde(default)]
 pub struct Config {
     pub system: SystemConfig,
@@ -23,19 +23,6 @@ pub struct Config {
     pub boot: BootConfig,
     pub font: FontConfig,
     pub behavior: BehaviorConfig,
-}
-
-impl Default for Config {
-    fn default() -> Self {
-        Self {
-            system: SystemConfig::default(),
-            theme: ThemeConfig::default(),
-            shell: ShellConfig::default(),
-            boot: BootConfig::default(),
-            font: FontConfig::default(),
-            behavior: BehaviorConfig::default(),
-        }
-    }
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -218,18 +205,10 @@ impl Default for BehaviorConfig {
     }
 }
 
-#[derive(Debug, Clone, Deserialize)]
+#[derive(Debug, Clone, Deserialize, Default)]
 #[serde(default)]
 struct ThemePresetDocument {
     theme: ThemePreset,
-}
-
-impl Default for ThemePresetDocument {
-    fn default() -> Self {
-        Self {
-            theme: ThemePreset::default(),
-        }
-    }
 }
 
 #[derive(Debug, Clone, Deserialize, Default)]
@@ -485,7 +464,7 @@ impl Config {
             let mut warnings = cfg.validate_and_fix_colors();
             cfg.normalize_misc_fields(&mut warnings);
             cfg.save(path)?;
-            return Ok(warnings);
+            Ok(warnings)
         }
     }
 
@@ -791,10 +770,10 @@ fn unknown_key_error(key: &str) -> String {
         "behavior.welcome_message",
     ];
 
-    let bare = key.split('.').last().unwrap_or(key);
+    let bare = key.split('.').next_back().unwrap_or(key);
     let suggestion = ALL_KEYS
         .iter()
-        .find(|k| k.split('.').last() == Some(bare) && **k != key)
+        .find(|k| k.split('.').next_back() == Some(bare) && **k != key)
         .map(|k| format!(" Did you mean '{k}'?"));
 
     match suggestion {

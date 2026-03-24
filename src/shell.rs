@@ -538,10 +538,7 @@ fn print_neofetch(theme: &ThemeEngine, vfs: &VirtualFs, start_time: Instant) -> 
 }
 
 fn print_neofetch_ascii(theme: &ThemeEngine) {
-    let mut lines: Vec<String> = NEOFETCH_ASCII
-        .lines()
-        .map(ToString::to_string)
-        .collect();
+    let mut lines: Vec<String> = NEOFETCH_ASCII.lines().map(ToString::to_string).collect();
 
     trim_empty_vertical_padding(&mut lines);
 
