@@ -3,6 +3,13 @@ name: Build and Check
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - 'README.md'
+      - 'assets/**'
+      - 'SECURITY.md'
+      - '.gitignore'
+      - 'CONTRIBUTING.md'
+      - 'LICENSE'
   pull_request:
 
 jobs:
