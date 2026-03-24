@@ -35,6 +35,12 @@ Capsule OS is structured into modular components:
 
 The system operates entirely in user space and delegates hardware interaction to the host OS while maintaining logical isolation internally.
 
+## Screenshots
+
+![Screenshot 1](assets/screenshots/image.png)
+![Screenshot 2](assets/screenshots/image-1.png)
+![Screenshot 2](assets/screenshots/image-2.png)
+
 ## Getting Started
 
 ### Build and Run
