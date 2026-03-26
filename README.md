@@ -37,9 +37,16 @@ The system operates entirely in user space and delegates hardware interaction to
 
 ## Screenshots
 
-![Screenshot 1](assets/screenshots/image.png)
-![Screenshot 2](assets/screenshots/image-1.png)
-![Screenshot 2](assets/screenshots/image-2.png)
+<table>
+  <tr>
+    <td><img src="assets/screenshots/1.png" width="420" alt="Capsule OS Screenshot 1"></td>
+    <td><img src="assets/screenshots/2.png" width="420" alt="Capsule OS Screenshot 2"></td>
+  </tr>
+  <tr>
+    <td><img src="assets/screenshots/3.png" width="420" alt="Capsule OS Screenshot 3"></td>
+    <td><img src="assets/screenshots/4.png" width="420" alt="Capsule OS Screenshot 4"></td>
+  </tr>
+</table>
 
 ## Getting Started
 
@@ -76,14 +83,14 @@ Capsule OS is designed to be extensible and modifiable:
 ## Roadmap
 
 ```md
-Phase 1 — The Core Shell            
-Phase 2 — Theme Engine + Config         ← WE ARE HERE
-Phase 3 — GUI Window Manager
-Phase 4 — Hardware (audio/input)
-Phase 5 — Built-in Apps
-Phase 6 — Package Manager (capsule install)
-Phase 7 — Browser
-Phase 8 — Polish + Animated Boot loader
+Phase 1 - The Core Shell              [DONE]
+Phase 2 - Theme Engine + Config       [DONE]
+Phase 3 - GUI Window Manager          [DONE]
+Phase 4 - Hardware (audio/input)      <- WE ARE HERE
+Phase 5 - Built-in Apps
+Phase 6 - Package Manager (capsule install)
+Phase 7 - Browser
+Phase 8 - Polish + Animated Boot loader
 ```
 
 # Contributing

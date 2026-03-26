@@ -3,7 +3,7 @@
 [theme]
 name = "default-light"
 background = "#f8f5f0"
-foreground = "#e8e4dc"
+foreground = "#3a3a3a"
 accent = "#4d9eff"
 secondary = "#b07fff"
 success = "#5dcc6a"
