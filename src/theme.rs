@@ -19,6 +19,7 @@ pub enum ThemeRole {
     Warning,
     Error,
     Muted,
+    #[allow(dead_code)]
     Border,
 }
 
@@ -44,7 +45,6 @@ impl RgbColor {
 
 #[derive(Debug, Clone)]
 struct ThemeCache {
-    theme_name: String,
     primary: String,
     secondary: String,
     accent: String,
@@ -58,7 +58,6 @@ struct ThemeCache {
 impl ThemeCache {
     fn from_theme(theme: &ThemeConfig) -> Self {
         Self {
-            theme_name: theme.name.clone(),
             primary: theme.foreground.clone(),
             secondary: theme.secondary.clone(),
             accent: theme.accent.clone(),
@@ -220,16 +219,16 @@ impl ThemeEngine {
         }
     }
 
+    #[allow(dead_code)]
     pub fn color_block(&self, hex_color: &str) -> String {
         self.paint("████████", hex_color)
     }
 
+    #[allow(dead_code)]
     pub fn current_theme_name(&self) -> String {
-        let cache = self.inner.cache.read();
-        match cache {
-            Ok(cache) => cache.theme_name.clone(),
-            Err(_) => "unknown".to_string(),
-        }
+        Config::snapshot()
+            .map(|cfg| cfg.theme.name)
+            .unwrap_or_else(|_| "unknown".to_string())
     }
 
     pub fn take_warnings(&self) -> Vec<String> {
@@ -240,6 +239,7 @@ impl ThemeEngine {
         std::mem::take(&mut *warnings)
     }
 
+    #[allow(dead_code)]
     pub fn config_path(&self) -> &Path {
         &self.inner.config_path
     }

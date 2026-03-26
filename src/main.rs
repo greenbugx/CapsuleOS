@@ -1,9 +1,10 @@
 //! Capsule OS entry point.
-//! This binary initializes config/theme services, runs boot, and starts the interactive shell.
+//! Initializes config/theme services, runs the terminal boot sequence, then hands off to the egui GUI desktop environment.
 
 mod boot;
 mod config;
 mod fs;
+mod gui;
 mod prompt;
 mod shell;
 mod theme;
@@ -37,7 +38,7 @@ fn run() -> Result<()> {
     let vfs = VirtualFs::new("runtime").map_err(|err| anyhow::anyhow!(err))?;
 
     boot::run_boot_sequence(&theme_engine)?;
-    shell::run_shell(theme_engine, vfs)?;
+    gui::run(config_path, theme_engine, vfs)?;
 
     Ok(())
 }

@@ -69,6 +69,7 @@ pub fn run_boot_sequence(theme: &ThemeEngine) -> Result<()> {
     Ok(())
 }
 
+#[allow(dead_code)]
 pub fn run_shutdown_sequence(theme: &ThemeEngine) -> Result<()> {
     println!();
     println!(

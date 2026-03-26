@@ -1,6 +1,6 @@
 ﻿[package]
 name = "capsule_os"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 build = "build.rs"
 
@@ -9,8 +9,11 @@ winres = "0.1"
 
 [dependencies]
 anyhow = "1"
+chrono = { version = "0.4", features = ["clock"] }
 colored = "2.1"
 crossterm = "0.27"
+eframe       = "0.27"
+egui         = "0.27"
 dirs = "5.0"
 include_dir = "0.7"
 notify = "6"
